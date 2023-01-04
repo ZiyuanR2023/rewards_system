@@ -19,7 +19,7 @@ public class Customer {
 	private Integer id;
 	private String name;
 	@OneToMany(mappedBy="customer", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-	private Set<MyTransaction> transactions;
+	private Set<Transaction> transactions;
 	@JsonInclude
 	@Transient
 	private Long rewardPoints;
@@ -47,10 +47,10 @@ public class Customer {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public Set<MyTransaction> getTransactions() {
+	public Set<Transaction> getTransactions() {
 		return transactions;
 	}
-	public void setTransactions(Set<MyTransaction> transactions) {
+	public void setTransactions(Set<Transaction> transactions) {
 		this.transactions = transactions;
 	}
 	public Long getRewardPoints() {
