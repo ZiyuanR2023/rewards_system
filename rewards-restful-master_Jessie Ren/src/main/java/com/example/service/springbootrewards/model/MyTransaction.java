@@ -13,7 +13,7 @@ import javax.persistence.TemporalType;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class MyTransaction extends Reward{
+public class Transaction extends Reward{
 	@Id
 	@GeneratedValue
 	private Long id;
@@ -28,10 +28,10 @@ public class MyTransaction extends Reward{
 	private Date saveDate;
 	
 	
-	public MyTransaction() {
+	public Transaction() {
 		super();
 	}
-	public MyTransaction(Long id, Customer customer, Double total, String description, Date date) {
+	public Transaction(Long id, Customer customer, Double total, String description, Date date) {
 		super();
 		this.id = id;
 		this.customer = customer;
