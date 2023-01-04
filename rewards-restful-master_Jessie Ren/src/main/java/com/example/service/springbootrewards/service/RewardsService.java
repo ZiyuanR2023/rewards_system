@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import com.example.service.springbootrewards.model.Customer;
 
-@Service
 public interface RewardsService {
 	
 	public List<Customer> getCustomerAll() {}
