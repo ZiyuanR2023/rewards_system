@@ -29,5 +29,5 @@ Given a record of every transaction during a three month period, calculate the r
 
 ### To Run this project locally
 ```shell
-$ git clone https://github.com/cylixx/rewards-restful.git
+$ git clone https://github.com/ZiyuanR2023/rewards_system.git
 $ mvn spring-boot: run
