@@ -13,6 +13,7 @@ import javax.persistence.Transient;
 import com.fasterxml.jackson.annotation.JsonInclude;
 
 @Entity
+@Table(name = "Customer")
 public class Customer {
 	@Id
 	@GeneratedValue
