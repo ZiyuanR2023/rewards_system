@@ -23,16 +23,14 @@ public class Transaction{
 	private Customer customer;
 	private Double total;
 	private String description;
-	//@Temporal(TemporalType.DATE)
-	@Temporal(TemporalType.TIMESTAMP)
+	@Temporal(TemporalType.DATE)
 	private Date saveDate;
 	
 	
 	public Transaction() {
-		super();
+	
 	}
 	public Transaction(Long id, Customer customer, Double total, String description, Date date) {
-		super();
 		this.id = id;
 		this.customer = customer;
 		this.total = total;
