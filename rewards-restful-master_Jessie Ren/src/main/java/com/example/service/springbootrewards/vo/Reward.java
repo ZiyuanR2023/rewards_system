@@ -10,7 +10,7 @@ public class Reward {
 	private  Long points;
 
 	public Long getPoints() {
-		return id;
+		return points;
 	}
 	public void setPoints(Long points) {
 		this.points = points;
