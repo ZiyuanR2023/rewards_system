@@ -24,7 +24,9 @@ public class RewardsController {
 
 	
 	@RequestMapping(value = "findCustomerRewardsAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-	public Reward findCustomerRewardsById(@RequestParam Integer customerId) {
+	@ResponseStatus(HttpStatus.OK)
+	@RequestMapping(value = "findCustomerRewardsAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	public ResponseEntity<Reward> findCustomerRewardsById(@RequestParam Integer customerId) {
 		LOGGER.info("Enter RewardsController::find rewards for all customers");
 		Reward reward = rewardsService.findCustomerRewardsById(customerId);
 		return new ResponseEntity<Reward>(reward, HttpStatus.OK);
