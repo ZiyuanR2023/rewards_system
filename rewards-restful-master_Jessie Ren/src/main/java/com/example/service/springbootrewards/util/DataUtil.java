@@ -26,10 +26,22 @@ public class DataUtil{
 		return transactions.stream().map(x -> DataUtil.getPoints(x.total).intValue()).reduce(0, (a,b) -> a + b).longValue();
     }
 	
-    public static LocalDateTime getDate(String date){
-	    LocalDate currentDate = LocalDate.parse(date);
-	    LocalTime currentTime = LocalTime.of(0,0,0,0);
-	    return LocalDateTime.of(currentDate, currentTime);
+    public static Date getDate(String date){
+	    Date dateFormatted = new SimpleDateFormat("yyyy-MM-dd").parse(date);
+	    return dateFormatted;
+	    //LocalDate currentDate = LocalDate.parse(date);
+	    //LocalTime currentTime = LocalTime.of(0,0,0,0);
+	    //return LocalDateTime.of(currentDate, currentTime);
+    }
+	
+    public static String getEndDate(String startDate){
+	    //startDate = "2018-01-01"
+	    String[] dates = start
+	    //startDate = startDate.split("-");
+            int month = Integer.parseInt(dates[1]); //"01"
+	    int endMonth = Math.max(12, month+2);
+	    String endDate = dates[0] + "-" + endMonth + "-" + dates[2];
+	    return endDate;
     }
 
 }
