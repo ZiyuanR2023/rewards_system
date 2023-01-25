@@ -11,7 +11,7 @@ import com.example.service.springbootrewards.model.Customer;
 
 public interface RewardsService {
 	
-	public Reward findCustomerRewardsById(Integer customerId) {}
+	public Reward findCustomerRewardsById(Integer customerId, String startDate) {}
 	
 
 }
