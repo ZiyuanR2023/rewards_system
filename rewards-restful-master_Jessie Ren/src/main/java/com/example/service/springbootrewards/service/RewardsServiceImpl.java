@@ -18,9 +18,13 @@ public class RewardsServiceImpl implements RewardService{
 	private CustomerRepository customerRepository;
 	
 	@Override
-	public Reward findCustomerRewardsById(Integer customerId) {
+	public Reward findCustomerRewardsById(Integer customerId, String startDate) {
 		LOGGER.info("Enter RewardsService::find rewards for all customers");
-		Customer customerStatus = customerRepository.findById(customerId).orElse(null);
+		//startDate: "2018-01-01"
+		String endDate = getEndDate(startDate); //"2018-03-01"
+		Date startDateFormatted = getDate(startDate);
+		Date endDateFormatted = getDate(endDate);
+		Customer customerStatus = customerRepository.getThreeMonthsTransactionsById(customerId, startDateFormatted, endDateFormatted).orElse(null);
 		Set<Transaction> transactions = customerStatus.getTransactions();
 		Reward reward = new Reward();
 		reward.setPoints(DataUtil.getRewardPoints(transactions));
