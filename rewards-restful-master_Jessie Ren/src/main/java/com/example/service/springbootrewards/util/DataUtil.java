@@ -16,7 +16,7 @@ public class DataUtil{
 		
 		if (total > 100) {
 			points += 50;  //1 point for every dollar spent over $50
-			points += (otal.intValue() - 100) * 2;  //2 points for every dollar spent over $100
+			points += (total.intValue() - 100) * 2;  //2 points for every dollar spent over $100
         }
         return points;
     }
@@ -24,6 +24,12 @@ public class DataUtil{
     public static Long getRewardPoints(Set<Transaction> transactions) {
 		if (transactions == null || transactions.isEmpty()) return 0l;
 		return transactions.stream().map(x -> DataUtil.getPoints(x.total).intValue()).reduce(0, (a,b) -> a + b).longValue();
-	}
+    }
+	
+    public static LocalDateTime getDate(String date){
+	    LocalDate currentDate = LocalDate.parse(date);
+	    LocalTime currentTime = LocalTime.of(0,0,0,0);
+	    return LocalDateTime.of(currentDate, currentTime);
+    }
 
 }
