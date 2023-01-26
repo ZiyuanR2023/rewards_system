@@ -13,7 +13,7 @@ import org.jupiter.api.extension.ExtendWith;
 
 @ExtendWith(MockitoExtension.class)
 class RewardsControllerTest{
-    @MockitoExtension
+    @Mock
     private RewardsService rewardsService;
 
     @InjectMocks
