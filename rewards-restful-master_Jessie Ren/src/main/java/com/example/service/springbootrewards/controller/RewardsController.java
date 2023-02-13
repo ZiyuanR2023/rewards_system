@@ -23,7 +23,7 @@ public class RewardsController {
 	
 
 	
-	@RequestMapping(value = "findCustomerRewardsAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+	//@RequestMapping(value = "findCustomerRewardsAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	@RequestMapping(value = "findCustomerRewardsAll", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Reward> findCustomerRewardsById(@RequestParam Integer customerId, @RequestParam String startDate) {
